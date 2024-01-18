@@ -7,5 +7,6 @@ int main() {
     int b = 4;
     b = a;
 
+    cout << a << ' ' << b << '\n';
     cout << a*b;
 }
