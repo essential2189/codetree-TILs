@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -18,6 +19,8 @@ int main() {
 
 
     for (int i = 0; i < 100; i++) {
+        // cout << i << ' ' << v[0].second << ' ' << v[1].second << ' ' << v[2].second << '\n';
+
         int curr = i % 3;
         int next = (curr + 1) % 3;
 
@@ -25,8 +28,9 @@ int main() {
             v[next].second += v[curr].second;
             v[curr].second = 0;
         } else {
-            v[next].second += v[next].first;
-            v[curr].second -= v[next].first;
+            int add = v[next].first - v[next].second;
+            v[next].second += add;
+            v[curr].second -= add;
         }
 
     }
