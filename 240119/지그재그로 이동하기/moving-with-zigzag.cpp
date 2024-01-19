@@ -17,21 +17,18 @@ int main() {
 
     vector<int> stack = {a};
     
-    while (true) {
+    while (b > stack.back()) {
         if (flag % 2 == 0) {
             stack.push_back(a + count);
         } else {
             stack.push_back(a - count);
         }
 
-        if (stack.back() > b) {
-            break;
-        }
         answer += abs(stack[stack.size()-1] - stack[stack.size()-2]);
         count *= 2;
         flag++;
     }
 
-    answer += abs(b - stack[stack.size()-2]);
+    answer -= stack.back() - b;
     cout << answer;
 }
