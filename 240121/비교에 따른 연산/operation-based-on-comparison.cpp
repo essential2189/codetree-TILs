@@ -8,6 +8,6 @@ int main() {
     if (a > b) {
         std::cout << a*b;
     } else {
-        std::cout << b*a;
+        std::cout << b/a;
     }
 }
