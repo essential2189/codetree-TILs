@@ -19,16 +19,26 @@ int main() {
 
     while (true) {
         if (a < b && a+distance >= b) {
+            cout << '\n';
+            cout << a << '+' << distance << '=' << a+distance << '\n';
+            cout << b  << ' ' << last << ' ' << lastDistance << '\n';
             answer += abs(b - abs(last));
             break;
         } else if (a > b && a+distance <= b) {
+            cout << '\n';
+            cout << a << '+' << distance << '=' << a+distance << '\n';
+            cout << b  << ' ' << last << ' ' << lastDistance << '\n';
             answer += abs(b - abs(last));
             break;
         }
 
+        cout << answer << '+' << lastDistance << '+';
+
         answer += lastDistance + abs((a + distance) - a);
         last = a + distance;
         lastDistance = abs((a + distance) - a);
+
+        cout << abs((a + distance) - a) << '=' << answer << '\n';
 
         distance *= -2;
     }
