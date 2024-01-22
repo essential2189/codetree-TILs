@@ -22,7 +22,7 @@ int main() {
             answer += abs(b - last);
             break;
         } else if (a > b && a+distance <= b) {
-            answer += abs(b - abs(last));
+            answer += abs(b - last);
             break;
         }
 
