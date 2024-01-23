@@ -10,7 +10,7 @@ int main() {
         int i;
         cin >> i;
 
-        if (i % 3 == 0) {
+        if (i % 2 != 0 && i % 3 == 0) {
             cout << i << '\n';
         }
     }
