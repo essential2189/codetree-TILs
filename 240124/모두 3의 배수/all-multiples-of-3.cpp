@@ -10,7 +10,7 @@ int main() {
         int i;
         cin >> i;
 
-        if (i % 1 != 0) {
+        if (i % 3 != 0) {
             flag = false;
             break;
         }
