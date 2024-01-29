@@ -6,18 +6,27 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    for (int i = 1; i <= 9; i+=3) {
-        for (int j = i; j < i+3; j++) {
-            cout << a << " * " << j << " = " << a * j<< "  ";
+    if (a > b) {
+        for (int i = a; i >= b; i--) {
+            for (int k = 1; k <= 9; k+=3) {
+                for (int n = k; n < k+3; n++) {
+                    cout << i << " * " << n << " = " << i * n << "  ";
+                }
+                cout << '\n';
+            }
+            cout << '\n';
         }
-        cout << '\n';
+    } else {
+        for (int i = a; i <= b; i++) {
+            for (int k = 1; k <= 9; k+=3) {
+                for (int n = k; n < k+3; n++) {
+                    cout << i << " * " << n << " = " << i * n << "  ";
+                }
+                cout << '\n';
+            }
+            cout << '\n';
+        }
     }
-    cout << '\n';
 
-    for (int i = 1; i <= 9; i+=3) {
-        for (int j = i; j < i+3; j++) {
-            cout << b << " * " << j << " = " << b * j << "  ";
-        }
-        cout << '\n';
-    }
+    
 }
