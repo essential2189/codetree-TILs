@@ -20,7 +20,13 @@ int main() {
     while (count <= n) {
         for (int i = 0; i < count; i++) {
             v[y][x] = (char)alpha;
-            alpha++;
+            
+            if ((char)alpha == 'Z') {
+                alpha = 65;
+            } else {
+                alpha++;
+            }
+
             y++;
         }
 
