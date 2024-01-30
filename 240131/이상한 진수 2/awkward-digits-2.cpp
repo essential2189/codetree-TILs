@@ -17,19 +17,30 @@ int main() {
         return 0;
     }
 
+    int answer = 0;
 
     for (int i = 0; i < str.length(); i++) {
+        char temp;
         if (str[i] == '0') {
             str[i] = '1';
-            break;
+            temp = '0';
+        } else {
+            str[i] = '0';
+            temp = '1';
         }
-    }
 
-    int answer = 0;
-    for (int i = 0; i < str.length(); i++) {
-        if (str[str.length() - i - 1] == '1') {
-            answer += pow(2, i);
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str[str.length() - i - 1] == '1') {
+                sum += pow(2, i);
+            }
         }
+
+        if (sum > answer) {
+            answer = sum;
+        }
+
+        str[i] = temp;
     }
 
     cout << answer;
