@@ -28,8 +28,8 @@ int main() {
                 secondWhite++;
             }
         }
+        answer += black.size() * secondWhite;
     }
 
-
-    cout << black.size() * secondWhite;
+    cout << answer;
 }
