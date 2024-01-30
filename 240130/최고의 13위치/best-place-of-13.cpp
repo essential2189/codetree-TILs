@@ -21,13 +21,9 @@ int main() {
     int answer = 0;
 
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            int sum = 0;
-            for (int k = 0; k < 3; k++) {
-                if (v[i][j] == 1) {
-                    sum++;
-                }
-            }
+        for (int j = 0; j <= n-3; j++) {
+            int sum = v[i][j] + v[i][j+1] + v[i][j+2];
+            
             if (sum > answer) {
                 answer = sum;
             }
