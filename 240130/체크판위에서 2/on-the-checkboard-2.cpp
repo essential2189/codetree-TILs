@@ -19,6 +19,11 @@ int main() {
         board.push_back(v);
     }
 
+    if (board[0][0] == board[r-1][c-1]) {
+        cout << 0;
+        return 0;
+    }
+
     char startColor;
     if (board[0][0] == 'W') {
         startColor = 'W';
