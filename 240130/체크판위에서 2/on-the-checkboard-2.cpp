@@ -42,9 +42,7 @@ int main() {
 
                         // second
                         if (board[a][b] == startColor) {
-                            if (r-1 - a > 0 && c-1 - b > 0) {
-                                answer++;
-                            }
+                            answer++;
                         }
                     }
                 }
