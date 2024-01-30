@@ -8,6 +8,15 @@ int main() {
     string str;
     cin >> str;
 
+    if (str.length() == 1) {
+        if (str == "0") {
+            cout << 1;
+        } else {
+            cout << 0;
+        }
+        return 0;
+    }
+
 
     for (int i = 0; i < str.length(); i++) {
         if (str[i] == '0') {
