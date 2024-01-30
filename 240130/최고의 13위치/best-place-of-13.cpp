@@ -7,21 +7,30 @@ int main() {
     int n;
     cin >> n;
 
-    int answer = 0;
-
+    vector<vector<int>> v;
     for (int i = 0; i < n; i++) {
-        int sum = 0;
+        vector<int> vv;
         for (int j = 0; j < n; j++) {
             int a;
             cin >> a;
-            
-            if (a == 1) {
-                sum++;
-            }
+            vv.push_back(a);
         }
-        
-        if (sum > answer) {
-            answer = sum;
+        v.push_back(vv);
+    }
+
+    int answer = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            int sum = 0;
+            for (int k = 0; k < 3; k++) {
+                if (v[i][j] == 1) {
+                    sum++;
+                }
+            }
+            if (sum > answer) {
+                answer = sum;
+            }
         }
     }
 
