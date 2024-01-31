@@ -22,11 +22,15 @@ int main() {
         int right = 0;
         for (int j = 0; j < q.size(); j++) {
             if (i+1 < j && i+1 < q.size()) {
-                right = q[i] + q[j];
+                if (right < q[i] + q[j]) {
+                    right = q[i] + q[j];
+                }
             }
 
             if (i-1 > j && i-1 >= 0) {
-                left = q[i] + q[j];
+                if (left < q[i] + q[j]) {
+                    left = q[i] + q[j];
+                }
             }
         }
 
