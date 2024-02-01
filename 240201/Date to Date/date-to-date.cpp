@@ -7,7 +7,12 @@ int main() {
     int m1, d1, m2, d2;
     cin >> m1 >> d1 >> m2 >> d2;
 
-    int answer = d2;
+    if (m1 == m2) {
+        cout << d2 - d1 + 1;
+        return 0;
+    }
+    
+    int answer = 0;
 
     vector<int> month = {-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
