@@ -13,11 +13,11 @@ int main() {
 
     for (int i = m1; i < m2; i++) {
         if (i == m1) {
-            answer += month[i] - d1;
+            answer += month[i] - d1 + 1;
         } else {
             answer += month[i];
         }
     }
 
-    cout << answer + 1;
+    cout << answer;
 }
