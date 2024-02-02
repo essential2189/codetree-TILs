@@ -99,7 +99,6 @@ def solution():
             if board[i][j] == 1:
                 win, dist = check(i, j, 1)
                 if (win):
-                    print(i, j)
                     print(1)
                     print(dist[0]+1, dist[1]+1)
                     return
