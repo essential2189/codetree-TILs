@@ -14,9 +14,13 @@ int main() {
         int a, b;
         cin >> a >> b;
 
-        if (a > b) {
+        if (a == 3 && b == 1) {
+            right++;
+        } else if (a == 1 && b == 3) {
             left++;
-        } else if (b > a) {
+        } else if (a > b && !(a == 3 && b == 1)) {
+            left++;
+        } else if (a < b && !(a == 1 && b == 3)) {
             right++;
         }
     }
