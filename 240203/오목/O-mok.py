@@ -111,4 +111,5 @@ def solution():
                     print(dist[0]+1, dist[1]+1)
                     return
 
+    print(0)
 solution()
