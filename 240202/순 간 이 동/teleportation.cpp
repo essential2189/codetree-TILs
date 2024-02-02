@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main() {
     int dist1 = abs(a - x) + abs(b - y);
     int dist2 = abs(a - y) + abs(b - x);
 
-    int answer = min(dist1, dist2);
+    pair<int, int> answer = minmax({dist1, dist2, abs(a-b)});
 
-    cout << answer;
+    cout << answer.first;
 }
