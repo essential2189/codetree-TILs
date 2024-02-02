@@ -12,22 +12,20 @@ int main() {
     vector<int> month = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     vector<string> day = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
     
-    if (m1 == m2) {
-        int temp = d2 - d1;
-        if (temp < 0) {
-            temp += 7;
-        }
-        int date = temp % 7;;
-        cout << day[date];
-        return 0;
+    int first = d1;
+    for (int i = 1; i < m1; i++) {
+        first += month[i];
     }
 
-    int date = month[m1] - d1;
-
-    for (int i = m1+1; i < m2; i++) {
-        date += month[i];
+    int second = d2;
+    for (int i = 1; i < m2; i++) {
+        second += month[i];
     }
-    date += d2;
 
-    cout << day[date % 7];
+    int diff = first - second;
+    if (diff > 0) {
+        cout << day[7 - ((first - second) % 7)];
+    } else {
+        cout << day[(second - first) % 7];
+    }
 }
