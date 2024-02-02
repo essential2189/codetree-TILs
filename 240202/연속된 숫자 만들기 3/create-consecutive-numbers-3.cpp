@@ -26,32 +26,9 @@ int main() {
         return 0;
     }
 
-    vector<int> v1 = {a, b, c, 0};
-    vector<int> v2 = {a, b, c, 0};
-
-    while (true) {
-        if (v1[1] < v1[2]) {
-            v1 = {v1[0], v1[1]-1, v1[1], v1[3]+=1};
-        } else if (v1[1] > v1[2]) {
-            v1 = {v1[0], v1[1]+1, v1[1], v1[3]+=1};
-        }
-
-        if (check(v1)) {
-            break;
-        }
+    if (abs(a-b) > abs(b-c)) {
+        cout << abs(a-b) - 1;
+    } else {
+        cout << abs(b-c) - 1;
     }
-
-    while (true) {
-        if (v2[0] < v2[1]) {
-            v2 = {v2[1], v2[1]+1, v2[2], v2[3]+=1};
-        } else if (v2[0] > v2[1]) {
-            v2 = {v2[1], v2[1]-1, v2[2], v2[3]+=1};
-        }
-
-        if (check(v2)) {
-            break;
-        }
-    }
-
-    cout << max(v1[3], v2[3]);
 }
