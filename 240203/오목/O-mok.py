@@ -24,9 +24,9 @@ def check(i, j, a):
                 flag = False
                 break
         if flag:
-            return True, [i-2, j]
+            return True, [i+2, j]
 
-    # 뒤 
+    # 왼쪽
     if j-5 >= 0:
         flag = True
         for b in board[i][j-5:j]:
@@ -36,7 +36,7 @@ def check(i, j, a):
         if flag:
             return True, [i, j-2]
 
-    # 앞
+    # 오른쪽
     if (j+5 < 19):
         flag = True
         for b in board[i][j:j+5]:
