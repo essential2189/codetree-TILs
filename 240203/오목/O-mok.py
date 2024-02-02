@@ -17,7 +17,7 @@ def check(i, j, a):
             return True, [i-2, j]
     
     # 아래
-    if i+5 < 19:
+    if i+4 < 19:
         flag = True
         for b in board[i:i+5]:
             if b[j] is not a:
@@ -37,7 +37,7 @@ def check(i, j, a):
             return True, [i, j-2]
 
     # 오른쪽
-    if (j+5 < 19):
+    if j+4 < 19:
         flag = True
         for b in board[i][j:j+5]:
             if b is not a:
@@ -58,7 +58,7 @@ def check(i, j, a):
             return True, [i-2, j-2]
             
     # 왼쪽 아래
-    if i+5 < 19 and j-5 >= 0:
+    if i+4 < 19 and j-5 >= 0:
         flag = True
         for k in range(5):
             if board[i+k][j-k] is not a:
@@ -69,7 +69,7 @@ def check(i, j, a):
             return True, [i+2, j-2]
         
     # 오른쪽 위
-    if i-5 >= 0 and j+5 < 19:
+    if i-5 >= 0 and j+4 < 19:
         flag = True
         for k in range(5):
             if board[i-k][j+k] is not a:
@@ -80,7 +80,7 @@ def check(i, j, a):
             return True, [i-2, j+2]
 
     # 오른쪽 아래
-    if i+5 < 19 and j+5 < 19:
+    if i+4 < 19 and j+4 < 19:
         flag = True
         for k in range(5):
             if board[i+k][j+k] is not a:
