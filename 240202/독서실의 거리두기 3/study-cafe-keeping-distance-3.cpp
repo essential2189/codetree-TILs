@@ -18,9 +18,13 @@ int main() {
     int e = 0;
     bool flag = false;
 
-    for (int i = 0; i < v.size(); i++) {
+    for (int i = 0; i < v.size()-1; i++) {
         int temp = 0;
         if (v[i] == '1') {
+            if (v[i+1] == '1') {
+                cout << 1;
+                return 0;
+            }
             for (int j = i+1; j < v.size(); j++) {
                 if (v[j] == '0') {
                     temp++;
@@ -42,3 +46,6 @@ int main() {
         cout << max / 2 + 1;
     }
 }
+
+// 15
+// 110001001000101
