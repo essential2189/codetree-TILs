@@ -26,6 +26,11 @@ int main() {
         start = 'B';
     }
 
+    if (start == board[r-1][c-1]) {
+        cout << 0;
+        return 0;
+    }
+
     int answer = 0;
     for (int i = 1; i < r-1; i++) {
         for (int j = 1; j < c-1; j++) {
