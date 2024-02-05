@@ -18,17 +18,14 @@ int main() {
 
     int answer = 0;
 
-    for (int i = 0; i < v.size()-1; i++) {
-        vector<int> temp = {v[i]};
-
-        for (int j = i+1; j < v.size(); j++) {
-            if (temp.back() < v[j]) {
-                temp.push_back(v[j]);
-            }
-
-            if (temp.size() == 3) {
-                answer++;
-                break;
+    for (int i = 0; i < v.size()-2; i++) {
+        for (int j = i+1; j < v.size()-1; j++) {
+            if (v[i] < v[j]) {
+                for (int k = j+1; k < v.size(); k++) {
+                    if (v[j] < v[k]) {
+                        answer++;
+                    }
+                }
             }
         }
     }
