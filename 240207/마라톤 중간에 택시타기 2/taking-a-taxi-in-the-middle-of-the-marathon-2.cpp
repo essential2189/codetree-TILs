@@ -16,7 +16,7 @@ int main() {
         v.push_back({x, y});
     }
 
-    int answer = 9999999;
+    int answer = 99999999;
 
     for (int i = 1; i < v.size()-1; i++) {
         int temp = 0;
