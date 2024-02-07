@@ -20,7 +20,7 @@ int main() {
 
     for (int i = 1; i < v.size()-1; i++) {
         int temp = 0;
-        vector<int> curr = {0, 0};
+        vector<int> curr = {v[0][0], v[0][1]};
         for (int j = 0; j < v.size(); j++) {
             if (i != j) {
                 temp += abs(v[j][0] - curr[0]) + abs(v[j][1] - curr[1]);
