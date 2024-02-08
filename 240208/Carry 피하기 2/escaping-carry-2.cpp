@@ -30,7 +30,7 @@ int main() {
                 bool flag = true;
                 for (int n = 4; n >= 0; n--) {
                     int sum = (v[i][n] - '0') + (v[j][n] - '0') + (v[k][n] - '0');
-                    if (sum > 10) {
+                    if (sum >= 10) {
                         flag = false;
                         break;
                     }
