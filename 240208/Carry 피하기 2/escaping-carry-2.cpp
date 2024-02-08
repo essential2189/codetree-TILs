@@ -22,7 +22,7 @@ int main() {
         v.push_back(temp);
     }
     
-    int answer = 0;
+    int answer = -1;
 
     for (int i = 0; i < v.size()-2; i++) {
         for (int j = i+1; j < v.size()-1; j++) {
