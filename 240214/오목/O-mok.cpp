@@ -14,6 +14,8 @@ bool checkLeft(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -29,6 +31,8 @@ bool checkRight(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -44,6 +48,8 @@ bool checkUp(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -59,6 +65,8 @@ bool checkDown(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -74,6 +82,8 @@ bool checkUpLeft(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -89,6 +99,8 @@ bool checkDownLeft(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -104,6 +116,8 @@ bool checkUpRight(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
@@ -119,6 +133,8 @@ bool checkDownRight(vector<vector<int>> b, int i, int j, int a) {
                 flag = false;
                 break;
             }
+        } else {
+            return false;
         }
     }
 
