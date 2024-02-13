@@ -35,12 +35,72 @@ bool checkRight(vector<vector<int>> b, int i, int j, int a) {
     return flag;
 }
 
+bool checkUp(vector<vector<int>> b, int i, int j, int a) {
+    bool flag = true;
+
+    for (int k = 0; k < 5; k++) {
+        if (i-k >= 0 && i-k < b.size() && j >= 0 && j < b[0].size()) {
+            if (b[i-k][j] != a) {
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    return flag;
+}
+
+bool checkDown(vector<vector<int>> b, int i, int j, int a) {
+    bool flag = true;
+
+    for (int k = 0; k < 5; k++) {
+        if (i+k >= 0 && i+k < b.size() && j >= 0 && j < b[0].size()) {
+            if (b[i+k][j] != a) {
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    return flag;
+}
+
 bool checkUpLeft(vector<vector<int>> b, int i, int j, int a) {
     bool flag = true;
 
     for (int k = 0; k < 5; k++) {
         if (i-k >= 0 && i-k < b.size() && j-k >= 0 && j-k < b[0].size()) {
             if (b[i-k][j-k] != a) {
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    return flag;
+}
+
+bool checkDownLeft(vector<vector<int>> b, int i, int j, int a) {
+    bool flag = true;
+
+    for (int k = 0; k < 5; k++) {
+        if (i+k >= 0 && i+k < b.size() && j-k >= 0 && j-k < b[0].size()) {
+            if (b[i+k][j-k] != a) {
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    return flag;
+}
+
+bool checkUpRight(vector<vector<int>> b, int i, int j, int a) {
+    bool flag = true;
+
+    for (int k = 0; k < 5; k++) {
+        if (i-k >= 0 && i-k < b.size() && j+k >= 0 && j+k < b[0].size()) {
+            if (b[i-k][j+k] != a) {
                 flag = false;
                 break;
             }
@@ -65,18 +125,6 @@ bool checkDownRight(vector<vector<int>> b, int i, int j, int a) {
     return flag;
 }
 
-vector<vector<int>> ratation(vector<vector<int>> b) {
-    vector<vector<int>> temp(b.size(), vector<int>(b[0].size(), 0));
-
-    for (int i = 0; i < b.size(); i++) {
-        for (int j = 0; j < b.size(); j++) {
-            temp[i][j] = board[b.size() - j -1][i];
-        }
-    }
-
-    return temp;
-}
-
 int main() {
 
     for (int i = 0; i < 19; i++) {
@@ -88,8 +136,6 @@ int main() {
         }
         board.push_back(v);
     }
-
-    vector<vector<int>> board_rotate = ratation(board);
     
     for (int i = 0; i < 19; i++) {
         for (int j = 0; j < 19; j++) {
@@ -104,33 +150,32 @@ int main() {
                     cout << i+1 << ' ' << j+3;
                     return 0;
                 }
+                if (checkUp(board, i, j, a)) {
+                    cout << a << '\n';
+                    cout << i-1 << ' ' << j+1;
+                    return 0;
+                }
+                if (checkDown(board, i, j, a)) {
+                    cout << a << '\n';
+                    cout << i+3 << ' ' << j+1;
+                    return 0;
+                }
                 if (checkUpLeft(board, i, j, a)) {
                     cout << a << '\n';
                     cout << i-1 << ' ' << j-1;
                     return 0;
                 }
+                if (checkDownLeft(board, i, j, a)) {
+                    cout << a << '\n';
+                    cout << i+3 << ' ' << j-1;
+                    return 0;
+                }
+                if (checkUpRight(board, i, j, a)) {
+                    cout << a << '\n';
+                    cout << i-1 << ' ' << j+3;
+                    return 0;
+                }
                 if (checkDownRight(board, i, j, a)) {
-                    cout << a << '\n';
-                    cout << i+3 << ' ' << j+3;
-                    return 0;
-                }
-
-                if (checkLeft(board_rotate, i, j, a)) {
-                    cout << a << '\n';
-                    cout << i+1 << ' ' << j-1;
-                    return 0;
-                }
-                if (checkRight(board_rotate, i, j, a)) {
-                    cout << a << '\n';
-                    cout << i+1 << ' ' << j+3;
-                    return 0;
-                }
-                if (checkUpLeft(board_rotate, i, j, a)) {
-                    cout << a << '\n';
-                    cout << i-1 << ' ' << j-1;
-                    return 0;
-                }
-                if (checkDownRight(board_rotate, i, j, a)) {
                     cout << a << '\n';
                     cout << i+3 << ' ' << j+3;
                     return 0;
@@ -139,5 +184,5 @@ int main() {
         }
     }
 
-    cout << '0';
+    cout << 0;
 }
