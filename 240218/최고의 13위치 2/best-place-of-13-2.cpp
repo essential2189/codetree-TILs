@@ -23,6 +23,7 @@ int main() {
     for (int a = 0; a < 2; a++) {
         int max = 0;
         int x, y;
+        bool flag = false;
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n-2; j++) {
                 int sum = v[i][j] + v[i][j+1] + v[i][j+2];
@@ -30,7 +31,12 @@ int main() {
                     max = sum;
                     y = i;
                     x = j;
+                    flag = true;
+                    break;
                 }
+            }
+            if (flag) {
+                break;
             }
         }
 
