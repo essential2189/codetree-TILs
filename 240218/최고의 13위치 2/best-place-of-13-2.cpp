@@ -34,11 +34,13 @@ int main() {
             }
         }
 
-        v[y][x] = -999;
-        v[y][x+1] = -999;
-        v[y][x+2] = -999;
+        if (max > 0) {
+            v[y][x] = -999;
+            v[y][x+1] = -999;
+            v[y][x+2] = -999;
 
-        answer += max;
+            answer += max;
+        }
     }
 
     cout << answer;
