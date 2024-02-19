@@ -23,7 +23,7 @@ int main() {
     for (int i = 0; i < v.size(); i++) {
         int sum = 0;
         for (int j = i; j < v.size(); j++) {
-            if (v[j].first <= i+k+1) {
+            if (v[j].first <= v[i].first+k) {
                 if (v[j].second == 'G') {
                     sum += 1;
                 } else if (v[j].second == 'H') {
