@@ -4,9 +4,9 @@
 
 using namespace std;
 
-bool contain(vector<int> vv, int i) {
+bool contain(vector<int> vv, double i) {
     for (int a: vv) {
-        if (a == i) {
+        if (a == (double)i) {
             return true;
         }
     }
@@ -24,13 +24,14 @@ int main() {
         v.push_back(i);
     }
 
-    int answer = 0;
+    int answer = v.size();
 
     for (int i = 0; i < v.size()-1; i++) {
         for (int j = i+1; j < v.size(); j++) {
-            int sum = accumulate(v.begin()+i, v.begin()+j, 0);
-            int avg = sum / (j-i);
-            if (contain(vector<int>(v.begin()+i, v.begin()+j), avg)) {
+            double sum = accumulate(v.begin()+i, v.begin()+j+1, 0);
+
+            double avg = sum / (j-i);
+            if (contain(vector<int>(v.begin()+i, v.begin()+j+1), avg)) {
                 answer++;
             }
         }
