@@ -30,7 +30,7 @@ int main() {
         for (int j = i+1; j < v.size(); j++) {
             double sum = accumulate(v.begin()+i, v.begin()+j+1, 0);
 
-            double avg = sum / (j-i);
+            double avg = sum / (j-i+1);
             if (contain(vector<int>(v.begin()+i, v.begin()+j+1), avg)) {
                 answer++;
             }
