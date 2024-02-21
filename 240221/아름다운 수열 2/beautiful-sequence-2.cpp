@@ -32,10 +32,10 @@ int main() {
     }
 
     vector<vector<int>> per;
+    sort(b.begin(), b.end());
     do {
         per.push_back(b);
     } while(next_permutation(b.begin(), b.end()));
-
 
     int answer = 0;
     for (int i = 0; i <= a.size()-m; i++) {
