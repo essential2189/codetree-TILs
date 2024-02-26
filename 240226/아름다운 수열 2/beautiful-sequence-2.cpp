@@ -31,6 +31,11 @@ int main() {
         b.push_back(i);
     }
 
+    if (a.size() < b.size()) {
+        cout << 0;
+        return 0;
+    }
+
     sort(b.begin(), b.end());
 
     int answer = 0;
