@@ -8,7 +8,7 @@ int main() {
     int n, k;
     cin >> n >> k;
     
-    vector<int> v(100, 0);
+    vector<int> v(k*2*2, 0);
 
     for (int i = 0; i < n; i++) {
         int candy, b;
@@ -17,12 +17,8 @@ int main() {
     }
 
     int answer = 0;
-    for (int i = k; i < 100; i++) {
-        int end = i+k+1;
-        if (i+k+1 > 100) {
-            end = 101;
-        }
-        int sum = accumulate(v.begin()+i-k, v.begin()+end, 0);
+    for (int i = k; i < k*2; i++) {
+        int sum = accumulate(v.begin()+i-k, v.begin()+i+k+1, 0);
 
         if (sum > answer) {
             answer = sum;
