@@ -13,7 +13,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int candy, b;
         cin >> candy >> b;
-        v[b] = {candy};
+        v[b] += candy;
     }
 
     int answer = 0;
