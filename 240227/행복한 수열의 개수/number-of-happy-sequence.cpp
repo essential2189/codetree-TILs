@@ -6,6 +6,10 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
+    if (n == 1 && m == 1) {
+        cout << 2;
+        return 0;
+    }
 
     vector<vector<int>> v;
     for (int i = 0; i < n; i++) {
