@@ -72,11 +72,13 @@ int main() {
             int dr = DownRight(v, i, j);
             int r = Right(v, i, j);
             int d = Down(v, i, j);
-            
-            pair<int, int> max = minmax({ul, ur, dl, dr, r, d});
 
-            if (max.second > answer) {
-                answer = max.second;
+            vector<int> temp = {ul, ur, dl, dr, r, d};
+            
+            int max = *max_element(temp.begin(), temp.end());
+
+            if (max > answer) {
+                answer = max;
             }
         }
     }
