@@ -4,6 +4,8 @@
 
 using namespace std;
 
+int n, m;
+
 int UpLeft(vector<vector<int>> v, int i, int j) {
     if (i-1 >= 0 && j-1 >= 0) {
         return v[i][j] + v[i-1][j] + v[i][j-1];
@@ -12,42 +14,42 @@ int UpLeft(vector<vector<int>> v, int i, int j) {
 }
 
 int UpRight(vector<vector<int>> v, int i, int j) {
-    if (i-1 >= 0 && j+1 < v[0].size()) {
+    if (i-1 >= 0 && j+1 < m) {
         return v[i][j] + v[i-1][j] + v[i][j+1];
     }
     return 0;
 }
 
 int DownLeft(vector<vector<int>> v, int i, int j) {
-    if (i+1 < v.size() && j-1 >= 0) {
+    if (i+1 < n && j-1 >= 0) {
         return v[i][j] + v[i+1][j] + v[i][j-1];
     }
     return 0;
 }
 
 int DownRight(vector<vector<int>> v, int i, int j) {
-    if (i+1 < v.size() && j+1 < v[0].size()) {
+    if (i+1 < n && j+1 < m) {
         return v[i][j] + v[i+1][j] + v[i][j+1];
     }
     return 0;
 }
 
 int Right(vector<vector<int>> v, int i, int j) {
-    if (j+2 < v[0].size()) {
+    if (j+2 < m) {
         return v[i][j] + v[i][j+1] + v[i][j+2];
     }
     return 0;
 }
 
 int Down(vector<vector<int>> v, int i, int j) {
-    if (i+2 < v.size()) {
+    if (i+2 < n) {
         return v[i][j] + v[i+1][j] + v[i+2][j];
     }
     return 0;
 }
 
+
 int main() {
-    int n, m;
     cin >> n >> m;
     
     vector<vector<int>> v;
