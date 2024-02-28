@@ -12,7 +12,7 @@ int UpLeft(vector<vector<int>> v, int i, int j) {
 }
 
 int UpRight(vector<vector<int>> v, int i, int j) {
-    if (i-1 >= 0 && j+1 < v.size()) {
+    if (i-1 >= 0 && j+1 < v[0].size()) {
         return v[i][j] + v[i-1][j] + v[i][j+1];
     }
     return 0;
@@ -26,14 +26,14 @@ int DownLeft(vector<vector<int>> v, int i, int j) {
 }
 
 int DownRight(vector<vector<int>> v, int i, int j) {
-    if (i+1 < v.size() && j+1 < v.size()) {
+    if (i+1 < v.size() && j+1 < v[0].size()) {
         return v[i][j] + v[i+1][j] + v[i][j+1];
     }
     return 0;
 }
 
 int Right(vector<vector<int>> v, int i, int j) {
-    if (j+2 < v.size()) {
+    if (j+2 < v[0].size()) {
         return v[i][j] + v[i][j+1] + v[i][j+2];
     }
     return 0;
