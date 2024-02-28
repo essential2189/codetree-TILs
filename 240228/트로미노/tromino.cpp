@@ -39,6 +39,13 @@ int Right(vector<vector<int>> v, int i, int j) {
     return 0;
 }
 
+int Down(vector<vector<int>> v, int i, int j) {
+    if (i+2 < v.size()) {
+        return v[i][j] + v[i+1][j] + v[i+2][j];
+    }
+    return 0;
+}
+
 int main() {
     int n, m;
     cin >> n >> m;
@@ -62,8 +69,9 @@ int main() {
             int dl = DownLeft(v, i, j);
             int dr = DownRight(v, i, j);
             int r = Right(v, i, j);
+            int d = Down(v, i, j);
             
-            pair<int, int> max = minmax({ul, ur, dl, dr, r});
+            pair<int, int> max = minmax({ul, ur, dl, dr, r, d});
 
             if (max.second > answer) {
                 answer = max.second;
