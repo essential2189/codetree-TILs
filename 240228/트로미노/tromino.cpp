@@ -73,12 +73,23 @@ int main() {
             int r = Right(v, i, j);
             int d = Down(v, i, j);
 
-            vector<int> temp = {ul, ur, dl, dr, r, d};
-            
-            int max = *max_element(temp.begin(), temp.end());
-
-            if (max > answer) {
-                answer = max;
+            if (ul > answer) {
+                answer = ul;
+            }
+            if (ur > answer) {
+                answer = ur;
+            }
+            if (dl > answer) {
+                answer = dl;
+            }
+            if (dr > answer) {
+                answer = dr;
+            }
+            if (r > answer) {
+                answer = r;
+            }
+            if (d > answer) {
+                answer = d;
             }
         }
     }
