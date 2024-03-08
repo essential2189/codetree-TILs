@@ -30,7 +30,7 @@ vector<int> second(vector<vector<int>> v, int i, int j) {
     int last_y = -1;
     int last_x = -1;
     while(true) {
-        if (i - idx < 0 || j - idx < 0) {
+        if (i - idx < 0 || j - idx <= 0) {
             break;
         }
         count += v[i-idx][j-idx];
@@ -43,13 +43,13 @@ vector<int> second(vector<vector<int>> v, int i, int j) {
     return {last_y, last_x, count};
 }
 
-vector<int> third(vector<vector<int>> v, int i, int j, int start_i) {
+vector<int> third(vector<vector<int>> v, int i, int j, int start_i, int start_j) {
     int count = 0;
     int idx = 1;
     int last_y = -1;
     int last_x = -1;
     while(true) {
-        if (i + idx >= start_i || j - idx < 0) {
+        if (i + idx > start_i || j - idx < start_j) {
             break;
         }
         count += v[i+idx][j-idx];
@@ -100,7 +100,7 @@ int main() {
         for (int j = 1; j < n-1; j++) {
             vector<int> f = first(v, i, j);
             vector<int> s = second(v, f[0], f[1]);
-            vector<int> t = third(v, s[0], s[1], i);
+            vector<int> t = third(v, s[0], s[1], n-j-1, n-i-1);
             vector<int> fo = fourth(v, t[0], t[1], i, j);
 
             int sum = f[2] + s[2] + t[2] + fo[2];
