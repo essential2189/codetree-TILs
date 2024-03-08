@@ -11,7 +11,7 @@ vector<int> first(vector<vector<int>> v, int i, int j) {
     int last_y = -1;
     int last_x = -1;
     while(true) {
-        if (i - idx < 0 || j + idx >= n) {
+        if (i - idx <= 0 || j + idx >= n) {
             break;
         }
         count += v[i-idx][j+idx];
@@ -94,17 +94,6 @@ int main() {
         }
         v.push_back(temp);
     }
-    // vector<int> f = first(v, 3, 2);
-    // cout <<"first "<< f[0] << ' ' << f[1] << ' ' << f[2] << '\n';
-
-    // vector<int> s = second(v, f[0], f[1]);
-    // cout <<"second "<< s[0] << ' ' << s[1] << ' ' << s[2] << '\n';
-
-    // vector<int> t = third(v, s[0], s[1], 3);
-    // cout <<"third "<< t[0] << ' ' << t[1] << ' ' << t[2] << '\n';
-
-    // vector<int> fo = fourth(v, t[0], t[1], 3, 2);
-    // cout <<"fourth "<< fo[0] << ' ' << fo[1] << ' ' << fo[2] << '\n';
 
     int answer = 0;
     for (int i = 2; i < n; i++) {
