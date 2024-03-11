@@ -13,7 +13,6 @@ int square(int i, int j, int first, int second) {
   int last_x = j;
 
   // first
-  bool check = false;
   for (int idx = 1; idx <= first; idx++) {
     int y = last_y - 1;
     int x = last_x + 1;
@@ -21,59 +20,50 @@ int square(int i, int j, int first, int second) {
       count += v[y][x];
       last_y = y;
       last_x = x;
-      check = true;
     } else {
       return -1;
     }
   }
 
   // second
-  if (check) {
-    check = false;
-    for (int idx = 1; idx <= second; idx++) {
-      int y = last_y - 1;
-      int x = last_x - 1;
+  for (int idx = 1; idx <= second; idx++) {
+    int y = last_y - 1;
+    int x = last_x - 1;
 
-      if (y >= 0 && x > 0) {
-        count += v[y][x];
-        last_y = y;
-        last_x = x;
-        check = true;
-      } else {
-        return -1;
-      }
+    if (y >= 0 && x > 0) {
+      count += v[y][x];
+      last_y = y;
+      last_x = x;
+    } else {
+      return -1;
     }
   }
 
   // third
-  if (check) {
-    check = false;
-    for (int idx = 1; idx <= first; idx++) {
-      int y = last_y + 1;
-      int x = last_x - 1;
+  for (int idx = 1; idx <= first; idx++) {
+    int y = last_y + 1;
+    int x = last_x - 1;
 
-      if (y < n && x >= 0) {
-        count += v[y][x];
-        last_y = y;
-        last_x = x;
-        check = true;
-      } else {
-        return -1;
-      }
+    if (y < n && x >= 0) {
+      count += v[y][x];
+      last_y = y;
+      last_x = x;
+    } else {
+      return -1;
     }
   }
 
   // fourth
-  if (check) {
-    for (int idx = 1; idx < second; idx++) {
-      int y = last_y + 1;
-      int x = last_x + 1;
+  for (int idx = 1; idx < second; idx++) {
+    int y = last_y + 1;
+    int x = last_x + 1;
 
-      if (y < n && x < n) {
-        count += v[y][x];
-      } else {
-        return -1;
-      }
+    if (y < n && x < n) {
+      count += v[y][x];
+      last_y = y;
+      last_x = x;
+    } else {
+      return -1;
     }
   }
 
