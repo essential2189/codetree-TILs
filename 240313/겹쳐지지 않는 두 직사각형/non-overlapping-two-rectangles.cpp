@@ -63,6 +63,7 @@ int main() {
                                         int count2 = sum(ii, jj, yy, xx);
 
                                         if (count + count2 > answer) {
+                                            printf("%d %d\n", count, count2);
                                             answer = count + count2;
                                         }
                                     }
@@ -70,13 +71,9 @@ int main() {
                             }
                          }
                     }
-
-
                  }
             }
-            break;
         }
-        break;
     }
 
     cout << answer;
