@@ -67,13 +67,6 @@ int main() {
 
                     vector<vector<bool>> visited = visit(i, j, y, x);
 
-                    // for (int a = 0; a < n; a++) {
-                    //     for (int b = 0; b < m; b++) {
-                    //         cout << visited[a][b] << ' ';
-                    //     }
-                    //     cout << '\n';
-                    // }
-
                     // second
                     for (int ii = 0; ii < n; ii++) {
                          for (int jj = 0; jj < m; jj++) {
