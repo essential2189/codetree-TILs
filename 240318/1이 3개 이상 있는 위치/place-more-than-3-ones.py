@@ -1,7 +1,7 @@
 def solution(n):
     board = []
     for _ in range(n):
-        board.append(list(map(int, input().split(" "))))
+        board.append(list(map(int, input().strip().split(" "))))
 
     dist = [[0, 1], [1, 0], [0, -1], [-1, 0]]
 
