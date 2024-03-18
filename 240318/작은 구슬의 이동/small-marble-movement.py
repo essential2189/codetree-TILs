@@ -30,7 +30,7 @@ def solution(n, t, r, c, d):
     return " ".join(map(str, location))
         
 
-n, t = list(map(int, input().split(" ")))
+n, t = list(map(int, input().strip().split(" ")))
 r, c, d = list(input().split(" "))
 
 print(solution(n, t, int(r), int(c), d))
