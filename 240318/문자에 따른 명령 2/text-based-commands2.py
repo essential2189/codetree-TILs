@@ -27,9 +27,4 @@ def solution(string):
     
     return location
 
-            
-
-
-
-
 print(" ".join(map(str, solution(list(input())))))
