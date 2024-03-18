@@ -22,7 +22,7 @@ def solution(n, t, r, c, d):
         elif x < 1:
             dist = [0, 1]
         elif x > n:
-            dist [0, -1]
+            dist = [0, -1]
         else:
             location[0] = y
             location[1] = x
