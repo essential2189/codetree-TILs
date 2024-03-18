@@ -16,9 +16,9 @@ def solution(n, t, r, c, d):
         x = location[1] + dist[1]
 
         if y < 1:
-            dist = [1, 0]
-        elif y > n:
             dist = [-1, 0]
+        elif y > n:
+            dist = [1, 0]
         elif x < 1:
             dist = [0, 1]
         elif x > n:
