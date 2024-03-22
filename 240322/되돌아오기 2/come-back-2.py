@@ -30,9 +30,10 @@ def solution(c):
             direct = turn_right(direct)
 
         answer += 1
-        
+
         if start == [0, 0]:
             return answer
 
+    return -1
 
 print(solution(c))
