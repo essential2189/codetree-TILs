@@ -19,7 +19,7 @@ for _ in range(m):
         if (y >= 0 and y < n and x >= 0 and x < n and board[y][x]):
             count += 1
     
-    if count >= 3:
+    if count == 3:
         print(1)
     else:
         print(0)
