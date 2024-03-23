@@ -34,7 +34,7 @@ def solution(n, board, k):
             elif direct == [0, 1]:
                 direct = [-1, 0]
             elif direct == [0, -1]:
-                direct = [11, 0]
+                direct = [1, 0]
         else:
             if direct == [1, 0]:
                 direct = [0, 1]
