@@ -7,7 +7,7 @@ def solution(n, m):
     location = [0, 0]
     
     board = [[0] * m for _ in range(n)]
-    visited = [[False] * m for _ in range(m)]
+    visited = [[False] * m for _ in range(n)]
 
     board[0][0] = "A"
     visited[0][0] = True
