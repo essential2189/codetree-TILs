@@ -22,7 +22,7 @@ def solution(n, board, k):
         location = [n-1, n - 1 - k % n]
     elif i == 3:
         direct = [0, 1]
-        location = [k % n, 0]
+        location = [n - 1 - k % n, 0]
 
     answer = 1
     while(True):
