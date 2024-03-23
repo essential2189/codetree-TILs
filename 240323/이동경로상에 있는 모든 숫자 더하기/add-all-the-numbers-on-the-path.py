@@ -2,8 +2,7 @@ n, t = list(map(int, input().split(" ")))
 
 com = input()
 
-board = [list(map(int, input().split(" "))) for _ in range(n)]
-
+board = [list(map(int, input().strip().split(" "))) for _ in range(n)]
 
 def turn_left(dist):
     d = [[-1, 0], [0, -1], [1, 0], [0, 1]]
