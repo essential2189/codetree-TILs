@@ -14,9 +14,9 @@ class ZeroZeroSeven:
         self.time = time
     
     def print(self):
-        print("secret code : ", self.secret_code)
-        print("meeting point : ", self.meeting_point)
-        print("time : ", self.time)
+        print("secret code :", self.secret_code)
+        print("meeting point :", self.meeting_point)
+        print("time :", self.time)
 
     
 a = input().split(" ")
