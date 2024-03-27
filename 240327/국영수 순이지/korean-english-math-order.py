@@ -16,7 +16,7 @@ for _ in range(n):
 
     arr.append(Student(name, k, e, m))
 
-arr.sort(key=lambda x: (-x.k, -x.e, -x.m))
+arr.sort(key=lambda x: (int(x.k), int(x.e), int(x.m)), reverse=True)
 
 for a in arr:
     a.print()
