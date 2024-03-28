@@ -11,7 +11,7 @@ for i in range(n):
     h, w = list(map(int, input().strip().split(" ")))
     arr.append(Student(i+1, h, w))
 
-arr.sort(key=lambda x: (x.h, x.w))
+arr.sort(key=lambda x: (x.h, -x.w))
 
 for a in arr:
     print(a.h, a.w, a.i)
