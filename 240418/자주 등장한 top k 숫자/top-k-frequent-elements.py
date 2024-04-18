@@ -18,5 +18,5 @@ for k in m:
 l.sort(key=lambda x: (-x[1], -x[0]))
 
 for i in l:
-    if i[1] > 1:
+    if i[1] > k:
         print(i[0], end=" ")
