@@ -12,11 +12,13 @@ for a in arr:
 
 l = []
 
-for k in m:
-    l.append([k, m[k]])
+for i in m:
+    l.append([i, m[i]])
 
 l.sort(key=lambda x: (-x[1], -x[0]))
 
+count = 0
 for i in l:
-    if i[1] >= k:
+    if i[1] >= k and count < k:
         print(i[0], end=" ")
+        count += 1
