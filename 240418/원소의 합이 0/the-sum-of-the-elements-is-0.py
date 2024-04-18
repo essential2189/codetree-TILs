@@ -20,8 +20,6 @@ for i in a:
             diff = 0 - i - j - k
 
             if diff in m:
-                answer += 1
-
-                m[diff] -= 1
+                answer += m[diff]
 
 print(answer)
