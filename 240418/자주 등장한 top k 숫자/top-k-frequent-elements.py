@@ -19,6 +19,6 @@ l.sort(key=lambda x: (-x[1], -x[0]))
 
 count = 0
 for i in l:
-    if i[1] >= k and count < k:
+    if count < k:
         print(i[0], end=" ")
         count += 1
