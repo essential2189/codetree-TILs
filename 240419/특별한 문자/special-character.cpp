@@ -18,15 +18,23 @@ int main() {
     }
 
     bool flag = true;
+    int answer_idx = 9999999;
+    char answer;
     for (auto i: m) {
         if (i.second == 1) {
-            cout << i.first;
-            flag = false;
-            break;
+            int idx = s.find(i.first);
+
+            if (idx < answer_idx) {
+                answer_idx = idx;
+                answer = i.first;
+                flag = false;
+            }
         }
     }
 
     if (flag) {
         cout << "None";
+    } else {
+        cout << answer;
     }
 }
