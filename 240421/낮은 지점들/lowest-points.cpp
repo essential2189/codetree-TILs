@@ -22,7 +22,7 @@ int main() {
         }
     }
 
-    int answer = 0;
+    long answer = 0;
     for (auto i: m) {
         answer += i.second;
     }
