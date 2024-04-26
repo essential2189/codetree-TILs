@@ -57,7 +57,7 @@ def find_max_area(idx):
         bomb_type[y][x] = 0
 
 for i in range(n):
-    given_row = list(map(int, input().split(" ")))
+    given_row = list(map(int, input().strip().split(" ")))
     for j, bomb_place in enumerate(given_row):
         if bomb_place:
             bomb_loc.append([i, j])
