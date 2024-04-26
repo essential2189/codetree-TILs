@@ -2,77 +2,66 @@ import copy
 
 n = int(input())
 
-board = []
-for _ in range(n):
-    board.append(list(map(int, input().strip().split(" "))))
+bombed = [[False] * n for _ in range(n)]
 
-bomb = [[[-1, 0], [-2, 0], [1, 0], [2, 0]],
-        [[-1, 0], [1, 0], [0, -1], [0, 1]],
-        [[-1, -1], [1, 1], [1, -1], [-1, 1]]]
+bomb_shapes = [
+        [[-1, 0], [-2, 0], [0, 0], [1, 0], [2, 0]],
+        [[-1, 0], [1, 0], [0, 0], [0, -1], [0, 1]],
+        [[-1, -1], [1, 1], [0, 0], [1, -1], [-1, 1]]
+    ]
 
-loc = []
-for i in range(n):
-    for j in range(n):
-        if board[i][j] == 1:
-            loc.append([i, j])
+bomb_type = [[-1 for _ in range(n)]for _ in range(n)]
 
-answer = 0
+bomb_loc = []
 
-list_ = []
-def dfs(arr, idx):
-    if len(arr) == 2:
-        list_.append(arr[:])
-        return
+def bomb(x, y, b_type):
+    for i in range(5):
+        dy, dx = bomb_shapes[b_type][i]
+        ny = y + dy
+        nx = x + dx
+        if ny >= 0 and ny < n and nx >= 0 and nx < n:
+            bombed[ny][nx] = True
+        
+def calc():
+    for i in range(n):
+        for j in range(n):
+            bombed[i][j] = False
+
     
-    for i in range(idx, 3):
-        arr.append(i)
-        dfs(arr, i+1)
-        arr.pop()
-
-    return
-
-for i in range(len(loc)):
-    dfs([i], 0)
-
-###
-
-def check(arr):
-    board_copy = copy.deepcopy(board)
-
-    count = len(arr)
-
-    for a in arr:
-        l = loc[a[0]]
-        b = bomb[a[1]]
-
-        for i in b:
-            y = l[0] + i[0]
-            x = l[1] + i[1]
-            
-            if y >= 0 and y < n and x >= 0 and x < n and board_copy[y][x] == 0:
-                board_copy[y][x] = 2
+    for i in range(n):
+        for j in range(n):
+            if bomb_type[i][j]:
+                bomb(i, j, bomb_type[i][j])
+    
+    count = 0
+    for i in range(n):
+        for j in range(n):
+            if bombed[i][j]:
                 count += 1
-
+    
     return count
 
 answer = 0
-def dfs2(arr, b):
-    global answer;
+def find_max_area(idx):
+    global answer
 
-    if len(arr) == len(loc):
-        count = check(arr)
-
-        if count > answer:
-            answer = count
+    if idx == len(bomb_loc):
+        answer = max(answer, calc())
         return
-    
-    for i in range(b, len(list_)):
-        arr.append(list_[i])
-        dfs2(arr, b+3)
-        arr.pop()
-    
-    return
 
-dfs2([], 0)
+    for i in range(3):
+        y, x = bomb_loc[idx]
+
+        bomb_type[y][x] = i
+        find_max_area(idx + 1)
+        bomb_type[y][x] = -1
+
+for i in range(n):
+    given_row = list(map(int, input().split(" ")))
+    for j, bomb_place in enumerate(given_row):
+        if bomb_place:
+            bomb_loc.append([i, j])
+
+find_max_area(0)
 
 print(answer)
