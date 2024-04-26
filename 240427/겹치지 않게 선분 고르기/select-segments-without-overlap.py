@@ -34,7 +34,7 @@ def dfs(count, idx):
 
     for i in range(idx, n):
         arr.append(line[i])
-        dfs(count+1, idx+1)
+        dfs(count+1, i+1)
         arr.pop()
 
 dfs(0, 0)
