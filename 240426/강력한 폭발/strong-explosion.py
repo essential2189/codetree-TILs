@@ -2,15 +2,15 @@ import copy
 
 n = int(input())
 
-bombed = [[False] * n for _ in range(n)]
-
 bomb_shapes = [
-        [[-1, 0], [-2, 0], [0, 0], [1, 0], [2, 0]],
-        [[-1, 0], [1, 0], [0, 0], [0, -1], [0, 1]],
-        [[-1, -1], [1, 1], [0, 0], [1, -1], [-1, 1]]
-    ]
+    [],
+    [[-2, 0], [-1, 0], [0, 0], [1, 0], [2, 0]],
+    [[-1, 0], [1, 0], [0, 0], [0, -1], [0, 1]],
+    [[-1, -1], [-1, 1], [0, 0], [1, -1], [1, 1]]
+]
 
-bomb_type = [[-1 for _ in range(n)]for _ in range(n)]
+bomb_type = [[0 for _ in range(n)]for _ in range(n)]
+bombed = [[False] * n for _ in range(n)]
 
 bomb_loc = []
 
@@ -49,12 +49,12 @@ def find_max_area(idx):
         answer = max(answer, calc())
         return
 
-    for i in range(3):
+    for i in range(1, 4):
         y, x = bomb_loc[idx]
 
         bomb_type[y][x] = i
         find_max_area(idx + 1)
-        bomb_type[y][x] = -1
+        bomb_type[y][x] = 0
 
 for i in range(n):
     given_row = list(map(int, input().split(" ")))
